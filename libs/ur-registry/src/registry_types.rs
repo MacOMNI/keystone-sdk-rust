@@ -38,6 +38,7 @@ pub enum URType {
     SolSignature(String),
     TronSignRequest(String),
     TronSignature(String),
+    HpxCallDevice(String),
 }
 
 impl URType {
@@ -84,6 +85,7 @@ impl URType {
             "iota-sign-request" => Ok(URType::IotaSignRequest(type_str.to_string())),
             "ergo-sign-request" => Ok(URType::ErgoSignRequest(type_str.to_string())),
             "sol-signature" => Ok(URType::SolSignature(type_str.to_string())),
+            "hpx-app-call-device" => Ok(URType::HpxCallDevice(type_str.to_string())),
             _ => Err(URError::NotSupportURTypeError(type_str.to_string())),
         }
     }
@@ -125,6 +127,7 @@ impl URType {
             URType::IotaSignHashRequest(type_str) => type_str.to_string(),
             URType::ErgoSignRequest(type_str) => type_str.to_string(),
             URType::SolSignature(type_str) => type_str.to_string(),
+            URType::HpxCallDevice(type_str) => type_str.to_string(),
         }
     }
 }
@@ -250,3 +253,6 @@ pub const ZCASH_FULL_VIEWING_KEY: RegistryType =
 pub const ZCASH_UNIFIED_FULL_VIEWING_KEY: RegistryType =
     RegistryType("zcash-unified-full-viewing-key", Some(49203));
 pub const ZCASH_PCZT: RegistryType = RegistryType("zcash-pczt", Some(49204));
+
+// HPX custom types
+pub const HPX_APP_CALL_DEVICE: RegistryType = RegistryType("hpx-app-call-device", None);

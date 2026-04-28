@@ -41,3 +41,4 @@ pub mod traits;
 mod types;
 pub mod zcash;
 pub mod tron;
+pub mod hpx;
