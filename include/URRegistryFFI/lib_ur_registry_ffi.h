@@ -16,6 +16,7 @@ const char* parse_crypto_multi_accounts(struct ExternError*, const char* ur_type
 const char* get_uncompressed_key(struct ExternError*, const char* compressed_key);
 const char* derive_public_key(struct ExternError*, const char* xpub, const char* path);
 const char* parse_hd_path(struct ExternError*, const char* hd_path);
+const char* decode_ur_to_cbor_hex(struct ExternError*, const char* ur_input);
 
 // BTC
 const char* generate_crypto_psbt(struct ExternError*, const char* psbt_hex);
@@ -67,6 +68,18 @@ const char* parse_arweave_signature(struct ExternError*, const char* ur_type, co
 // Cardano
 const char* generate_cardano_sign_request(struct ExternError*, const char* request_id, const char* sign_data, const char* utxos, const char* cert_keys, const char* origin);
 const char* parse_cardano_signature(struct ExternError*, const char* ur_type, const char* cbor_hex);
+
+// Stellar
+const char* generate_stellar_sign_request(struct ExternError*, const char* request_id, const char* sign_data, const char* path, const char* xfp, const char* address, const char* origin, const int sign_type);
+const char* parse_stellar_signature(struct ExternError*, const char* ur_type, const char* cbor_hex);
+
+// Ton
+const char* generate_ton_sign_request(struct ExternError*, const char* request_id, const char* sign_data, const int data_type, const char* address, const char* derivation_path, const char* xfp, const char* origin);
+const char* parse_ton_signature(struct ExternError*, const char* ur_type, const char* cbor_hex);
+
+// Ergo
+const char* generate_ergo_sign_request(struct ExternError*, const char* request_id, const char* sign_data, const char* boxes, const char* derivation_paths, const char* origin);
+const char* parse_ergo_signed_tx(struct ExternError*, const char* ur_type, const char* cbor_hex);
 
 // Zcash
 const char* parse_zcash_accounts(struct ExternError*, const char* ur_type, const char* cbor_hex);

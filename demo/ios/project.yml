@@ -16,6 +16,7 @@ targets:
     sources:
       - path: App
       - path: ParseCryptoMultiAccountsDemo.swift
+      - path: CryptoMultiAccountsLogSamples.swift
     dependencies:
       - framework: ../../target/URRegistryFFI.xcframework
     settings:

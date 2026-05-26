@@ -2,3 +2,10 @@ target
 .idea
 .DS_Store
 pkg
+demo/android/app/build
+*.so
+demo/android/build
+demo/fixtures
+demo/android/.gradle
+.xcode-derived
+.gradle-home

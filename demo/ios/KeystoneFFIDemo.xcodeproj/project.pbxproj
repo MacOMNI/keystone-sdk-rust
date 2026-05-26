@@ -10,6 +10,7 @@
 		19451F0FC15FB72AE12911AB /* URRegistryFFI.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AC1F45FFBD6048622E028B4 /* URRegistryFFI.xcframework */; };
 		3EAB194736C1A08735CBA081 /* KeystoneFFIDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3853980E0E392D8485B4566D /* KeystoneFFIDemoApp.swift */; };
 		83A5BCBC92E887037F4E6E99 /* ParseCryptoMultiAccountsDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE17047FC386028B9410F3DF /* ParseCryptoMultiAccountsDemo.swift */; };
+		864EC862F7D60C6888926FBE /* CryptoMultiAccountsLogSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9C9EDD5C0FECC34468B98D /* CryptoMultiAccountsLogSamples.swift */; };
 		9A6A0030AE808A4C45BCA472 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1011E3C0072BE89E83180FD0 /* ContentView.swift */; };
 		9F34FF816CD8D4546F442D21 /* URRegistryFFI.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2AC1F45FFBD6048622E028B4 /* URRegistryFFI.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -35,6 +36,7 @@
 		484CC221960C217DD55884EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		BE17047FC386028B9410F3DF /* ParseCryptoMultiAccountsDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseCryptoMultiAccountsDemo.swift; sourceTree = "<group>"; };
 		DDAC5F79E93DED43CB01D1E4 /* KeystoneFFIDemo.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = KeystoneFFIDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB9C9EDD5C0FECC34468B98D /* CryptoMultiAccountsLogSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoMultiAccountsLogSamples.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 		8685A12D3BE096D8E56E9834 = {
 			isa = PBXGroup;
 			children = (
+				EB9C9EDD5C0FECC34468B98D /* CryptoMultiAccountsLogSamples.swift */,
 				BE17047FC386028B9410F3DF /* ParseCryptoMultiAccountsDemo.swift */,
 				579D80761E8D66933A88A29E /* App */,
 				3A47CC5D5D3C377877B4593C /* Frameworks */,
@@ -146,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A6A0030AE808A4C45BCA472 /* ContentView.swift in Sources */,
+				864EC862F7D60C6888926FBE /* CryptoMultiAccountsLogSamples.swift in Sources */,
 				3EAB194736C1A08735CBA081 /* KeystoneFFIDemoApp.swift in Sources */,
 				83A5BCBC92E887037F4E6E99 /* ParseCryptoMultiAccountsDemo.swift in Sources */,
 			);

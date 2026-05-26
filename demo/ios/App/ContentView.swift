@@ -1,12 +1,12 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var output = "Tap \"Parse\" to call parse_crypto_multi_accounts"
+    @State private var output = "Tap \"Batch Verify\" to run multi-part decode+parse for 8-10 sample groups"
 
     var body: some View {
         NavigationView {
             VStack(alignment: .leading, spacing: 12) {
-                Button("Parse") {
+                Button("Batch Verify") {
                     do {
                         output = try ParseCryptoMultiAccountsDemo.run()
                     } catch {

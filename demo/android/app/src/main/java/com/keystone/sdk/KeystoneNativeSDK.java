@@ -8,6 +8,7 @@ public final class KeystoneNativeSDK {
     private KeystoneNativeSDK() {
     }
 
+    public static native String decodeUrToCborHex(String urInput);
+
     public static native String parseCryptoMultiAccounts(String urType, String cborHex);
 }
-
