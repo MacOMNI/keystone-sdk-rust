@@ -16,6 +16,9 @@ const KEYS: u8 = 2;
 const DEVICE: u8 = 3;
 const DEVICE_ID: u8 = 4;
 const DEVICE_VERSION: u8 = 5;
+const DEVICE_LABEL: u8 = 6;
+const DEVICE_SN: u8 = 7;
+const PASSPHRASE_ENABLED: u8 = 8;
 
 #[derive(Default, Clone, Debug)]
 pub struct CryptoMultiAccounts {
@@ -24,6 +27,9 @@ pub struct CryptoMultiAccounts {
     device: Option<String>,
     device_id: Option<String>,
     device_version: Option<String>,
+    device_label: Option<String>,
+    device_sn: Option<String>,
+    passphrase_enabled: Option<bool>,
 }
 
 impl CryptoMultiAccounts {
@@ -55,6 +61,22 @@ impl CryptoMultiAccounts {
         self.device_version = Some(device_version);
     }
 
+    pub fn set_device_label(&mut self, device_label: String) {
+        self.device_label = Some(device_label);
+    }
+
+    pub fn set_device_sn(&mut self, device_sn: String) {
+        self.device_sn = Some(device_sn);
+    }
+
+    pub fn set_passphrase_enabled(&mut self, passphrase_enabled: bool) {
+        if passphrase_enabled {
+            self.passphrase_enabled = Some(true);
+        } else {
+            self.passphrase_enabled = None;
+        }
+    }
+
     pub fn new(
         master_fingerprint: Fingerprint,
         keys: Vec<CryptoHDKey>,
@@ -68,6 +90,9 @@ impl CryptoMultiAccounts {
             device,
             device_id,
             device_version,
+            device_label: None,
+            device_sn: None,
+            passphrase_enabled: None,
         }
     }
 
@@ -85,6 +110,15 @@ impl CryptoMultiAccounts {
     }
     pub fn get_device_version(&self) -> Option<String> {
         self.device_version.clone()
+    }
+    pub fn get_device_label(&self) -> Option<String> {
+        self.device_label.clone()
+    }
+    pub fn get_device_sn(&self) -> Option<String> {
+        self.device_sn.clone()
+    }
+    pub fn get_passphrase_enabled(&self) -> bool {
+        self.passphrase_enabled.unwrap_or(false)
     }
 }
 
@@ -129,6 +163,17 @@ impl<C> minicbor::Encode<C> for CryptoMultiAccounts {
         }
         if let Some(device_version) = &self.device_version {
             e.int(Int::from(DEVICE_VERSION))?.str(device_version)?;
+        }
+        if let Some(device_label) = &self.device_label {
+            e.int(Int::from(DEVICE_LABEL))?.str(device_label)?;
+        }
+        if let Some(device_sn) = &self.device_sn {
+            e.int(Int::from(DEVICE_SN))?.str(device_sn)?;
+        }
+        if let Some(passphrase_enabled) = self.passphrase_enabled {
+            if passphrase_enabled {
+                e.int(Int::from(PASSPHRASE_ENABLED))?.bool(true)?;
+            }
         }
 
         Ok(())
